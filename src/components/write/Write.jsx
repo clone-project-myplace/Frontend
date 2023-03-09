@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useMutation, useQueryClient } from "react-query";
-import { addReview, uploadPost, uploadPost2 } from "../../axios/api";
+import { addReview, uploadPost2 } from "../../axios/api";
 import styled from "styled-components";
 import axios from "axios";
 import { faCameraAlt } from "@fortawesome/free-solid-svg-icons";
@@ -370,12 +370,6 @@ function Write() {
   //Todo : 리뷰 작성
   const queryClient = useQueryClient();
   const mutation = useMutation(uploadPost2, {
-    onSuccess: () => {
-      // queryClient.invalidateQueries("reviews");
-    },
-  });
-
-  const mutation2 = useMutation(uploadPost, {
     onSuccess: () => {
       // queryClient.invalidateQueries("reviews");
     },
